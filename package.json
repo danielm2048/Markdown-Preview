@@ -1,19 +1,19 @@
 {
+  "homepage": "https://danielm2048.github.io/Markdown-Preview/",
   "name": "markdown-preview",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "dompurify": "^2.0.7",
-    "highlight.js": "^9.16.2",
     "marked": "^0.7.0",
     "node-sass": "^4.13.0",
-    "pygmentize": "^0.5.3",
-    "pygmentize-bundled": "^2.3.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
