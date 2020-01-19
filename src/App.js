@@ -46,6 +46,7 @@ class App extends React.Component {
       <div>
         <Editor text={this.state.text} handleChange={this.handleChange} />
         <Preview text={this.state.text} />
+        <h4 style={{textAlign: "center"}}><i className="fa fa-code"></i> with <i className="fa fa-heart"></i> by Daniel Mimoun</h4>
       </div>
     );
   }
@@ -54,8 +55,8 @@ class App extends React.Component {
 
 const markdown = `# This is my Markdown Preview!
 
-## One of the frontend challenges on freeCodeCamp
-### Made by Daniel Mimoun
+## The preview is LIVE!!
+### Go ahead! Try it now!
   
 In here you can make your text **bold!**
 Or _italic_.

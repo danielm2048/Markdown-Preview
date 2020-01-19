@@ -1,28 +1,26 @@
-.App {
-  background-color: #282c34;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
 body {
-  background-color: turquoise;
+  background: linear-gradient(54deg, #3e84e4, #e13030);
+  background-size: 400% 400%;
+
+  -webkit-animation: animBack 14s ease infinite;
+  -moz-animation: animBack 14s ease infinite;
+  animation: animBack 14s ease infinite;
+}
+
+@-webkit-keyframes animBack {
+    0%{background-position:0% 91%}
+    50%{background-position:100% 10%}
+    100%{background-position:0% 91%}
+}
+@-moz-keyframes animBack {
+    0%{background-position:0% 91%}
+    50%{background-position:100% 10%}
+    100%{background-position:0% 91%}
+}
+@keyframes animBack {
+    0%{background-position:0% 91%}
+    50%{background-position:100% 10%}
+    100%{background-position:0% 91%}
 }
 
 #preview-container {
@@ -34,7 +32,8 @@ body {
 
 #preview {
   width: 600px;
-  border: 15px solid blue;
+  border: 15px solid rgb(61, 131, 211);
+  border-radius: 30px;
   padding: 50px;
   margin: 20px;
   blockquote {
