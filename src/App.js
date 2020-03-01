@@ -1,32 +1,14 @@
-import React from 'react';
-import './App.scss';
-import marked from 'marked';
+import React from "react";
+import "./App.scss";
 
-const createDOMPurify = require('dompurify');
-const { JSDOM } = require('jsdom');
+import Editor from "./Components/Editor";
+import Preview from "./Components/Preview";
 
-const window = (new JSDOM('')).window;
-const DOMPurify = createDOMPurify(window);
+import marked from "marked";
 
 marked.setOptions({
-  breaks: true,
+  breaks: true
 });
-
-const Editor = (props) => {
-  return (
-    <div style={{ textAlign: "center" }}>
-      <textarea id="editor" rows="15" cols="60" onChange={props.handleChange}>{markdown}</textarea>
-    </div>
-  );
-};
-
-const Preview = (props) => {
-  return (
-    <div id="preview-container">
-      <p id="preview" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(props.text) }} />
-    </div>
-  );
-};
 
 class App extends React.Component {
   constructor(props) {
@@ -44,14 +26,20 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Editor text={this.state.text} handleChange={this.handleChange} />
+        <Editor
+          text={this.state.text}
+          handleChange={this.handleChange}
+          markdown={markdown}
+        />
         <Preview text={this.state.text} />
-        <h4 style={{textAlign: "center"}}><i className="fa fa-code"></i> with <i className="fa fa-heart"></i> by Daniel Mimoun</h4>
+        <h4 style={{ textAlign: "center" }}>
+          <i className="fa fa-code"></i> with <i className="fa fa-heart"></i> by
+          Daniel Mimoun
+        </h4>
       </div>
     );
   }
 }
-
 
 const markdown = `# This is my Markdown Preview!
 
@@ -100,5 +88,5 @@ The preview will make | all of this look good | so don't worry.
 * And finally, let's show an embedded image:
 
 ![Thumbs up logo w/o Text](https://bit.ly/2PKltys)
-`
+`;
 export default App;
